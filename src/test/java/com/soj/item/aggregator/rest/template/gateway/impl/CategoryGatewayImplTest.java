@@ -37,10 +37,7 @@ class CategoryGatewayImplTest {
     private RestTemplate restTemplate;
     @Autowired
     private CategoryGateway categoryGateway;
-//
-//    @Test
-//    void getUrl() {
-//    }
+
 
     @Test
     void findAll() {
@@ -95,7 +92,7 @@ class CategoryGatewayImplTest {
                     Mockito.<HttpEntity<Resource>>any(),
                     Mockito.<Class<Resource>>any())).
                     thenReturn(result);
-            Resource<SubCategory> responseEntity=categoryGateway.createCategory(resource);
+            Resource<Category> responseEntity=categoryGateway.createCategory(resource);
             Assertions.assertEquals(responseEntity, result.getBody());
     }
 
@@ -115,7 +112,7 @@ class CategoryGatewayImplTest {
                     Mockito.<HttpEntity<Resource>>any(),
                     Mockito.<Class<Resource>>any())).
                     thenReturn(result);
-            Resource<SubCategory> responseEntity=categoryGateway.deleteCategory(1l);
+            Resource<Category> responseEntity=categoryGateway.deleteCategory(1l);
             Assertions.assertEquals(responseEntity, result.getBody());
     }
 

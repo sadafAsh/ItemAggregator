@@ -9,9 +9,9 @@ import java.util.List;
 public interface CategoryGateway {
 
     public List<Resource<Category>> findAll();
-    public Resource getCategoryById(long id);
-    public Resource createCategory(Resource<Category> category);
-    public Resource deleteCategory(long id);
-    public Resource updateCategory(long id ,Resource<Category> category);
+    public Resource<Category> getCategoryById(long id);
+    public Resource<Category> createCategory(Resource<Category> category);
+    public Resource<Category> deleteCategory(long id);
+    public Resource<Category> updateCategory(long id ,Resource<Category> category);
 
 }

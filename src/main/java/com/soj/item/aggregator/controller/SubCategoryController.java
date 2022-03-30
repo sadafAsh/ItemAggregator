@@ -15,13 +15,11 @@ public class SubCategoryController {
     @Autowired
      private SubCategoryService subCategoryService;
 
-@GetMapping
-    @RequestMapping(value = "/subCategory/{id}")
+@GetMapping(value = "/subCategory/{id}")
     public Resource<SubCategory> getById(@PathVariable long id) {
     return subCategoryService.getSubCategory(id);
 }
-  @GetMapping
-          @RequestMapping(value = "/subCategory")
+  @GetMapping(value = "/subCategory")
   public List<Resource<SubCategory>> findAllSubCategory(){
       return subCategoryService.getListAllSubCategory();
     }
@@ -30,12 +28,13 @@ public class SubCategoryController {
     return subCategoryService.createNewSubCategory(subCategory);
 }
 
+@DeleteMapping(value = "/subCategory/{id}")
 
-    @RequestMapping(value = "/subCategory/{id}",method = RequestMethod.DELETE)
     public Resource<SubCategory> deleteSubCategoryById(@PathVariable long id){
     return subCategoryService.deleteSubCategory(id);
 }
-@RequestMapping(value ="/subCategory/{id}",method = RequestMethod.PUT)
+@PutMapping(value = "/subCategory/{id}")
+
     public Resource<SubCategory> updateSubCategoryById(@PathVariable long id,@RequestBody Resource<SubCategory> subCategory){
     return subCategoryService.updateSubCategoryById(subCategory,id);
 }
